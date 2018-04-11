@@ -4,6 +4,7 @@ namespace Tests\Database\Seeds;
 
 use App\Application;
 use App\Association;
+use App\AssociationMessage;
 use App\Candidate;
 use App\Cause;
 use App\City;
@@ -32,5 +33,6 @@ class TestModelSeeder extends Seeder
         factory(School::class, 10)->create();
         factory(User::class, 10)->create();
         factory(Candidate::class, 10)->create();
+        factory(AssociationMessage::class, 10)->create();
     }
 }

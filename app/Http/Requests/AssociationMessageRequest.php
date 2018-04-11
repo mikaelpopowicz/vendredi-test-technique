@@ -2,20 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
+use Backpack\CRUD\app\Http\Requests\CrudRequest;
 
-class AssociationMessageRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
+class AssociationMessageRequest extends CrudRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        // only allow updates if the user is logged in
-        return \Auth::check();
-    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -25,7 +15,10 @@ class AssociationMessageRequest extends \Backpack\CRUD\app\Http\Requests\CrudReq
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'firstname' => 'required|min:5|max:255',
+            'lastname' => 'required|min:5|max:255',
+            'email' => 'required|email',
+            'message' => 'required|string|min:2|max:500',
         ];
     }
 
@@ -37,19 +30,10 @@ class AssociationMessageRequest extends \Backpack\CRUD\app\Http\Requests\CrudReq
     public function attributes()
     {
         return [
-            //
-        ];
-    }
-
-    /**
-     * Get the validation messages that apply to the request.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            //
+            'firstname' => 'prénom',
+            'lastname' => 'nom',
+            'email' => 'adresse mail',
+            'message' => 'votre demande',
         ];
     }
 }
