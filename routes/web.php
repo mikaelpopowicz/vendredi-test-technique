@@ -81,7 +81,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin'], 'namespace' =
     CRUD::resource( 'candidate', 'CandidateCrudController' )->with(function(){
         Route::post( 'candidate/import', 'CandidateCrudController@import' )->name('crud.candidate.import');
     });
-
+    Crud::resource( 'association-messages', 'AssociationMessageCrudController');
 });
 
 
