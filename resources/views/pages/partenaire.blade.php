@@ -72,7 +72,7 @@
                         <a id="partenaire-cta-asso"
                            target="_blank"
                            href="https://aide.vendredi.cc/hc/fr/articles/115000686269-Je-souhaite-devenir-partenaire-et-proposer-une-mission-Comment-faire-"
-                           class="btn btn-block btn-default partenaire-cta">En savoir plus</a>
+                           class="btn btn-block btn-default partenaire-cta">Nous écrire</a>
                     </div>
                 </div>
             </div>
