@@ -11,6 +11,9 @@ use App\Http\Requests\AssociationMessageRequest as UpdateRequest;
 class AssociationMessageCrudController extends CrudController
 {
 
+    const SINGLE_NAME = 'formulaire association';
+    const PLURAL_NAME = 'formulaires association';
+
     public function setUp()
     {
 
@@ -20,8 +23,8 @@ class AssociationMessageCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
         $this->crud->setModel("App\AssociationMessage");
-        $this->crud->setRoute("admin/associationmessage");
-        $this->crud->setEntityNameStrings('associationmessage', 'association_messages');
+        $this->crud->setRoute("admin/association-messages");
+        $this->crud->setEntityNameStrings(static::SINGLE_NAME, static::PLURAL_NAME);
 
         /*
 		|--------------------------------------------------------------------------
@@ -56,6 +59,7 @@ class AssociationMessageCrudController extends CrudController
         // ------ CRUD ACCESS
         // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
         // $this->crud->denyAccess(['list', 'create', 'update', 'reorder', 'delete']);
+        $this->crud->denyAccess(['create']);
 
         // ------ CRUD REORDER
         // $this->crud->enableReorder('label_name', MAX_TREE_LEVEL);

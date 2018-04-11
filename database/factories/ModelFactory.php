@@ -196,3 +196,15 @@ $factory->define(App\Mission::class, function (Faker\Generator $faker) {
         'unpublished_at' => null,
     ];
 });
+
+$factory->define(App\AssociationMessage::class, function (Faker\Generator $faker) {
+    $firstname = $faker->firstName;
+    $lastname = $faker->lastName;
+
+    return [
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'email' => "$firstname.$lastname@" . $faker->domainName,
+        'message' => $faker->text(100),
+    ];
+});

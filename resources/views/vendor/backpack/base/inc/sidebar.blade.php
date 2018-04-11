@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ApplicationCrudController;
 use App\Http\Controllers\Admin\AssociationCrudController;
 use App\Http\Controllers\Admin\CauseCrudController;
 use App\Http\Controllers\Admin\MissionCrudController;
+use App\Http\Controllers\Admin\AssociationMessageCrudController;
 
 ?>
 
@@ -42,8 +43,12 @@ use App\Http\Controllers\Admin\MissionCrudController;
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
+          <li>
+            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/association-messages') }}">
+              <i class="fa fa-envelope-o"></i> <span>{{ AppStatic::mb_ucfirst(AssociationMessageCrudController::PLURAL_NAME) }}</span>
+            </a>
+          </li>
 
-            </li>
 
           <li class="header">UTILISATEURS</li>
             <li>
